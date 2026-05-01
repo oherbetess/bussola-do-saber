@@ -51,4 +51,23 @@ document.addEventListener('DOMContentLoaded', function () {
             filtrarCursos();
         });
     });
-});
+}); // <--- O DOMContentLoaded termina aqui!
+
+// AS FUNÇÕES DE MODAL FICAM FORA (Para serem globais):
+
+function abrirModal(id, nome) {
+    document.getElementById('modalAvaliacao').style.display = 'block';
+    document.getElementById('idCursoModal').value = id;
+    document.getElementById('nomeCursoModal').innerText = nome;
+}
+
+function fecharModal() {
+    document.getElementById('modalAvaliacao').style.display = 'none';
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById('modalAvaliacao');
+    if (event.target == modal) {
+        fecharModal();
+    }
+}

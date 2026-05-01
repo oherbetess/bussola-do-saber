@@ -1,3 +1,4 @@
+/* Configurações Globais */
 :root {
     --bg-body: #121212;
     --bg-card: #1e1e1e;
@@ -5,6 +6,11 @@
     --text-secondary: #94a3b8;
     --accent-color: #ffffff;
     --border-color: #334155;
+    --primary-color: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -23,7 +29,6 @@ header {
     width: 100%;
     padding: 60px 20px 20px;
     text-align: center;
-    box-sizing: border-box;
 }
 
 header h1 {
@@ -42,7 +47,6 @@ header p {
     max-width: 600px;
     margin: 0 auto 40px;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
 #busca {
@@ -99,7 +103,6 @@ header p {
     max-width: 1200px;
     margin: 0 auto 60px;
     padding: 0 20px;
-    box-sizing: border-box;
 }
 
 .card {
@@ -112,6 +115,25 @@ header p {
     transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-secondary);
+}
+
+.tag {
+    background: #2d3748;
+    color: var(--text-secondary);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    align-self: flex-start;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
 .card p {
     color: var(--text-secondary);
     font-size: 0.95rem;
@@ -119,7 +141,20 @@ header p {
     flex-grow: 1;
 }
 
+.rating-display {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Botões do Card */
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
 .btn {
+    flex: 2;
     display: block;
     text-align: center;
     padding: 14px;
@@ -128,17 +163,90 @@ header p {
     text-decoration: none;
     border-radius: 10px;
     font-weight: 700;
-    margin-top: auto;
     transition: 0.2s;
 }
 
-/* Estilos do Admin */
+.btn-secundario {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secundario:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos do Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    color: white;
+    border: 1px solid var(--border-color);
+}
+
+.close {
+    color: var(--text-secondary);
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: white;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    color: white;
+    border-radius: 8px;
+    outline: none;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: var(--accent-color);
+}
+
+/* Área Admin */
 .admin-body {
     background-color: var(--bg-body);
     padding: 40px 20px;
     width: 100%;
-    box-sizing: border-box;
-    display: block;
 }
 
 table {
@@ -165,48 +273,4 @@ td {
     padding: 15px;
     border-bottom: 1px solid var(--border-color);
     color: var(--text-secondary);
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-.btn-add {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: #000000;
-    padding: 12px 24px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.btn-edit {
-    color: #63b3ed;
-    text-decoration: none;
-    margin-right: 10px;
-    font-weight: 600;
-}
-
-.btn-del {
-    color: #fc8181;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* Inputs do Admin */
-input[type="text"],
-input[type="url"],
-input[type="password"],
-textarea {
-    background-color: var(--bg-body);
-    color: white;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    outline: none;
-}
-
-input:focus,
-textarea:focus {
-    border-color: var(--accent-color);
 }

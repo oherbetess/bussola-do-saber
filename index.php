@@ -94,6 +94,11 @@ $res_cat = $conexao->query("SELECT DISTINCT categoria FROM cursos");
             <label>Seu Comentário:</label>
             <textarea name="comentario" rows="4" placeholder="O que achou do curso?"></textarea>
 
+            <!-- Aviso de LGPD simplificado -->
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 15px;">
+                * Ao enviar, você concorda que seu **nome** e **comentário** fiquem visíveis para outros usuários deste protótipo acadêmico, conforme a LGPD.
+            </p>
+
             <button type="submit" class="btn">Enviar Avaliação</button>
         </form>
     </div>

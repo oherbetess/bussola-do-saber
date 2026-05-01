@@ -1,7 +1,7 @@
 # 🧭 Bússola do Saber
 
 **Projeto de Extensão Universitária - ADS (5º Semestre)**  
-Uma plataforma de curadoria de cursos gratuitos focada na democratização do ensino digital para a comunidade de Goiânia e região.
+Uma plataforma de curadoria de cursos gratuitos focada na democratização do ensino digital para a comunidade.
 
 ## 🚀 Funcionalidades Atuais
 - **Busca Inteligente**: Filtro dinâmico de cursos por nome e categoria.
@@ -20,6 +20,12 @@ Uma plataforma de curadoria de cursos gratuitos focada na democratização do en
 2. Certifique-se de ter um servidor Apache/MySQL ativo (XAMPP/Laragon).
 3. Importe o arquivo SQL (disponível na pasta do projeto) para o seu banco de dados.
 4. Configure as credenciais no arquivo `db.php`.
+
+## ⚖️ Privacidade e LGPD
+Este é um projeto para fins estritamente acadêmicos. 
+- Os dados coletados (nome e comentário) são utilizados apenas para a funcionalidade de avaliação do sistema.
+- O projeto segue o princípio de **Minimização de Dados**, coletando apenas o essencial para a experiência social da plataforma.
+- Implementação de **Prepared Statements** para garantir a segurança e integridade das informações armazenadas.
 
 ---
 *Desenvolvido por Hérbete como parte do projeto de extensão universitária.*

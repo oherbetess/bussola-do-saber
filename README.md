@@ -7,7 +7,6 @@ Uma plataforma de curadoria de cursos gratuitos focada na democratização do en
 - **Busca Inteligente**: Filtro dinâmico de cursos por nome e categoria.
 - **Sistema de Avaliação**: Estudantes podem avaliar cursos com notas (1-5 estrelas) e comentários reais.
 - **Média em Tempo Real**: O sistema calcula automaticamente a reputação de cada curso com base nas avaliações.
-- **Design Responsivo**: Interface adaptável para celulares e computadores.
 
 ## 🛠️ Tecnologias Utilizadas
 - **Backend**: PHP 8.2

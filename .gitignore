@@ -1,0 +1,12 @@
+# Ocultar arquivo de conexão real
+includes/conexao.php
+
+# Ocultar pasta de uploads (os certificados dos seus usuários não devem subir)
+uploads/
+*.pdf
+*.jpg
+*.png
+
+# Ocultar arquivos de configuração do VS Code ou outros editores
+.vscode/
+.DS_Store

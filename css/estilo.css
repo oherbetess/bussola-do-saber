@@ -1,0 +1,23 @@
+body {
+    background-color: #212529; /* Cinza escuro */
+    color: #f8f9fa; /* Letra branca */
+    font-family: sans-serif;
+}
+.btn-azul {
+    background-color: #0dcaf0; /* Azul claro */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.btn-azul:hover {
+    background-color: #0a9cb5;
+}
+.card-curso {
+    background-color: #343a40;
+    border: 1px solid #495057;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}

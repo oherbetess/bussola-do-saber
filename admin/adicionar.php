@@ -2,25 +2,21 @@
 session_start();
 include '../includes/conexao.php';
 
-// SEGURANÇA: Só permite se for admin
 if (!isset($_SESSION['usuario_tipo']) || $_SESSION['usuario_tipo'] !== 'admin') {
-    header("Location: ../login.php");
-    exit();
+    header("Location: ../login.php"); exit();
 }
 
-// Lógica para salvar o curso quando clicar no botão
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
-    $instituicao = mysqli_real_escape_string($conexao, $_POST['instituicao']);
-    $categoria = mysqli_real_escape_string($conexao, $_POST['categoria']);
+    $inst = mysqli_real_escape_string($conexao, $_POST['instituicao']);
+    $cat = mysqli_real_escape_string($conexao, $_POST['categoria']);
     $link = mysqli_real_escape_string($conexao, $_POST['link_acesso']);
+    $desc = mysqli_real_escape_string($conexao, $_POST['descricao']);
 
-    $sql = "INSERT INTO cursos (nome, instituicao, categoria, link_acesso) VALUES ('$nome', '$instituicao', '$categoria', '$link')";
+    $sql = "INSERT INTO cursos (nome, instituicao, categoria, link_acesso, descricao) VALUES ('$nome', '$inst', '$cat', '$link', '$desc')";
     
     if (mysqli_query($conexao, $sql)) {
-        echo "<script>alert('Curso adicionado com sucesso!'); window.location='index.php';</script>";
-    } else {
-        echo "Erro: " . mysqli_error($conexao);
+        header("Location: index.php"); exit();
     }
 }
 
@@ -28,28 +24,24 @@ include '../includes/header.php';
 ?>
 
 <div class="container" style="max-width: 600px;">
-    <h2>➕ Adicionar Novo Curso</h2>
-    <form action="" method="POST" style="background: #262626; padding: 20px; border-radius: 10px;">
+    <h2>Cadastrar Novo Curso</h2>
+    <form action="" method="POST" class="card">
         <label>Nome do Curso:</label>
-        <input type="text" name="nome" required placeholder="Ex: Python para Iniciantes">
+        <input type="text" name="nome" required>
 
         <label>Instituição:</label>
-        <input type="text" name="instituicao" required placeholder="Ex: Fundação Bradesco">
+        <input type="text" name="instituicao" required>
 
         <label>Categoria:</label>
-        <select name="categoria">
-            <option value="Tecnologia">Tecnologia</option>
-            <option value="Programação">Programação</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Design">Design</option>
-            <option value="Outros">Outros</option>
-        </select>
+        <input type="text" name="categoria" required>
 
         <label>Link de Acesso:</label>
-        <input type="url" name="link_acesso" required placeholder="https://link-do-curso.com">
+        <input type="url" name="link_acesso" required>
 
-        <button type="submit" class="btn-azul" style="width: 100%; margin-top: 20px;">Salvar Curso</button>
-        <a href="index.php" style="display: block; text-align: center; color: #888; margin-top: 15px; text-decoration: none;">Voltar ao Painel</a>
+        <label>Descrição Breve:</label>
+        <textarea name="descricao" rows="4" required maxlength="255"></textarea>
+
+        <button type="submit" class="btn-azul" style="width: 100%; margin-top: 10px;">Salvar Curso</button>
     </form>
 </div>
 

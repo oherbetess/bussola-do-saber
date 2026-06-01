@@ -6,7 +6,6 @@ $id = $_GET['id'];
 $resultado = mysqli_query($conexao, "SELECT * FROM cursos WHERE id = $id");
 $curso = mysqli_fetch_assoc($resultado);
 
-// LÓGICA PARA SALVAR ALTERAÇÃO
 if (isset($_POST['atualizar'])) {
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
     $inst = mysqli_real_escape_string($conexao, $_POST['instituicao']);
